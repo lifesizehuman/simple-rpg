@@ -97,7 +97,7 @@ function Character(name, type) {
       console.log("Speed: " + this.speed);
     }
   };
-  this.luck = Math.floor((Math.random() * 20) + 5);
+  this.luck = Math.floor((Math.random() * 20) + 1);
   this.intelligence = function() {
     if (this.type === "Warrior") {
       (this.intelligence = (this.level * 60));
@@ -138,7 +138,7 @@ function Character(name, type) {
     console.log("---------------------");
   };
   this.attack = function(target) {
-    var damage = ((this.offense * this.luck) / (this.defense));
+    var damage = ((this.offense * this.luck) / (target.defense));
     target.hp -= damage;
     console.log(this.name + " attacked " + target.name);
     console.log("Damage inflicted: " + damage);
