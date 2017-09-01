@@ -1,5 +1,54 @@
 var inquirer = require("inquirer");
 
+// Put this into its own file later!
+var modifiers = {
+  Warrior: {
+    hp: 100,
+    mana: 10,
+    offense: 30,
+    defense: 80,
+    speed: 80,
+    luck: 50,
+    intelligence: 10
+  },
+  Mage: {
+    hp: 100,
+    mana: 10,
+    offense: 30,
+    defense: 80,
+    speed: 80,
+    luck: 50,
+    intelligence: 10
+  },
+  Healer: {
+    hp: 100,
+    mana: 10,
+    offense: 30,
+    defense: 80,
+    speed: 80,
+    luck: 50,
+    intelligence: 10
+  },
+  Berserker: {
+    hp: 100,
+    mana: 10,
+    offense: 30,
+    defense: 80,
+    speed: 80,
+    luck: 50,
+    intelligence: 10
+  },
+  Warpriest: {
+    hp: 100,
+    mana: 10,
+    offense: 30,
+    defense: 80,
+    speed: 80,
+    luck: 50,
+    intelligence: 10
+  }
+};
+
 function Character(name, type) {
   var alive = "Alive";
   var dead = "Dead";
@@ -7,115 +56,12 @@ function Character(name, type) {
   this.name = name;
   this.type = type;
   this.level = 1;
-  this.hp = function() {
-    if (this.type === "Warrior") {
-      (this.hp = (this.level * 100));
-      console.log("Health: " + this.hp);
-    } else if (this.type === "Mage") {
-      (this.hp = (this.level * 90));
-      console.log("Health: " + this.hp);
-    } else if (this.type === "Healer") {
-      (this.hp = (this.level * 120));
-      console.log("Health: " + this.hp);
-    } else if (this.type === "Berserker") {
-      (this.hp = (this.level * 110));
-      console.log("Health: " + this.hp);
-    } else if (this.type === "Warpriest") {
-      (this.hp = (this.level * 100));
-      console.log("Health: " + this.hp);
-    }
-  };
-  this.mana = function() {
-    if (this.type === "Warrior") {
-      (this.mana = (this.level * 50));
-      console.log("Mana: " + this.mana);
-    } else if (this.type === "Mage") {
-      (this.mana = (this.level * 150));
-      console.log("Mana: " + this.mana);
-    } else if (this.type === "Healer") {
-      (this.mana = (this.level * 175));
-      console.log("Mana: " + this.mana);
-    } else if (this.type === "Berserker") {
-      (this.mana = (this.level * 25));
-      console.log("Mana: " + this.mana);
-    } else if (this.type === "Warpriest") {
-      (this.mana = (this.level * 75));
-      console.log("Mana: " + this.mana);
-    }
-  };
-  this.offense = function() {
-    if (this.type === "Warrior") {
-      (this.offense = (this.level * 120));
-      console.log("Offense: " + this.offense);
-    } else if (this.type === "Mage") {
-      (this.offense = (this.level * 70));
-      console.log("Offense: " + this.offense);
-    } else if (this.type === "Healer") {
-      (this.offense = (this.level * 40));
-      console.log("Offense: " + this.offense);
-    } else if (this.type === "Berserker") {
-      (this.offense = (this.level * 150));
-      console.log("Offense: " + this.offense);
-    } else if (this.type === "Warpriest") {
-      (this.offense = (this.level * 100));
-      console.log("Offense: " + this.offense);
-    }
-  };
-  this.defense = function() {
-    if (this.type === "Warrior") {
-      (this.defense = (this.level * 100));
-      console.log("Defense: " + this.defense);
-    } else if (this.type === "Mage") {
-      (this.defense = (this.level * 90));
-      console.log("Defense: " + this.defense);
-    } else if (this.type === "Healer") {
-      (this.defense = (this.level * 70));
-      console.log("Defense: " + this.defense);
-    } else if (this.type === "Berserker") {
-      (this.defense = (this.level * 80));
-      console.log("Defense: " + this.defense);
-    } else if (this.type === "Warpriest") {
-      (this.defense = (this.level * 130));
-      console.log("Defense: " + this.defense);
-    }
-  };
-  this.speed = function() {
-    if (this.type === "Warrior") {
-      (this.speed = (this.level * 70));
-      console.log("Speed: " + this.speed);
-    } else if (this.type === "Mage") {
-      (this.speed = (this.level * 60));
-      console.log("Speed: " + this.speed);
-    } else if (this.type === "Healer") {
-      (this.speed = (this.level * 90));
-      console.log("Speed: " + this.speed);
-    } else if (this.type === "Berserker") {
-      (this.speed = (this.level * 80));
-      console.log("Speed: " + this.speed);
-    } else if (this.type === "Warpriest") {
-      (this.speed = (this.level * 75));
-      console.log("Speed: " + this.speed);
-    }
-  };
-  this.luck = Math.floor((Math.random() * 11) + 10);
-  this.intelligence = function() {
-    if (this.type === "Warrior") {
-      (this.intelligence = (this.level * 60));
-      console.log("Intelligence: " + this.intelligence);
-    } else if (this.type === "Mage") {
-      (this.intelligence = (this.level * 150));
-      console.log("Intelligence: " + this.intelligence);
-    } else if (this.type === "Healer") {
-      (this.intelligence = (this.level * 100));
-      console.log("Intelligence: " + this.intelligence);
-    } else if (this.type === "Berserker") {
-      (this.intelligence = (this.level * 30));
-      console.log("Intelligence: " + this.intelligence);
-    } else if (this.type === "Warpriest") {
-      (this.intelligence = (this.level * 80));
-      console.log("Intelligence: " + this.intelligence);
-    }
-  };
+  this.hp = this.level * modifiers[this.type];
+  this.mana = this.level * modifiers[this.type];
+  this.offense = this.level * modifiers[this.type];
+  this.defense = this.level * modifiers[this.type];
+  this.speed = this.level * modifiers[this.type];
+  this.intelligence = this.level * modifiers[this.type];
   this.status = function() {
     if (this.hp > 0) {
       console.log("Status: " + alive);
@@ -126,19 +72,18 @@ function Character(name, type) {
   this.printStats = function() {
     console.log("Name: " + this.name);
     console.log("Class: " + this.type);
-    console.log("Level: " + this.level);
-    this.hp();
-    this.mana();
-    this.offense();
-    this.defense();
-    this.speed();
+    console.log("Health: " + this.hp);
+    console.log("Mana: " + this.mana);
+    console.log("Offense: " + this.offense);
+    console.log("Defense: " + this.defense);
+    console.log("Speed: " + this.speed);
     console.log("Luck: " + this.luck);
-    this.intelligence();
+    console.log("Intellect: " + this.intelligence);
     this.status();
     console.log("---------------------");
   };
   this.attack = function(target) {
-    var damage = ((this.offense * this.luck) / (target.defense * target.luck));
+    var damage = ((this.offense * this.luck) - (target.defense * target.luck));
     target.hp -= damage;
     console.log(this.name + " attacked " + target.name);
     console.log("Damage inflicted: " + damage);
