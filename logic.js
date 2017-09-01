@@ -61,6 +61,7 @@ function Character(name, type) {
   this.offense = this.level * modifiers[this.type].offense;
   this.defense = this.level * modifiers[this.type].defense;
   this.speed = this.level * modifiers[this.type].speed;
+  this.luck = this.level * modifiers[this.type].luck;
   this.intelligence = this.level * modifiers[this.type].intelligence;
   this.status = function() {
     if (this.hp > 0) {
