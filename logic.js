@@ -104,7 +104,7 @@ var team = [];
 var enemies = [];
 
 var createPlayer = function() {
-  if (team.length + enemies.length < 2) {
+  if (team.length + enemies.length < 6) {
     console.log("New Character");
 
     inquirer.prompt([
@@ -122,7 +122,7 @@ var createPlayer = function() {
     ]).then(function(answers) {
       var character = new Character(answers.name, answers.type);
 
-      if (team.length < 1) {
+      if (team.length < 3) {
         team.push(character);
         console.log(character.name + " added to your team!");
       } else {
