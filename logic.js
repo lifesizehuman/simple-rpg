@@ -79,7 +79,8 @@ function Character(name, type) {
     console.log("---------------------");
   };
   this.attack = function(target) {
-    var damage = ((this.offense * this.luck) - (target.defense * target.luck));
+    var chanceModifier = Math.random();
+    var damage = (((this.offense * target.defense) / (this.luck + target.luck)) * chanceModifier);
     target.hp -= damage;
     console.log(this.name + " attacked " + target.name);
     console.log("Damage inflicted: " + damage);
