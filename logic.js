@@ -56,12 +56,12 @@ function Character(name, type) {
   this.name = name;
   this.type = type;
   this.level = 1;
-  this.hp = this.level * modifiers[this.type];
-  this.mana = this.level * modifiers[this.type];
-  this.offense = this.level * modifiers[this.type];
-  this.defense = this.level * modifiers[this.type];
-  this.speed = this.level * modifiers[this.type];
-  this.intelligence = this.level * modifiers[this.type];
+  this.hp = this.level * modifiers[this.type].hp;
+  this.mana = this.level * modifiers[this.type].mana;
+  this.offense = this.level * modifiers[this.type].offense;
+  this.defense = this.level * modifiers[this.type].defense;
+  this.speed = this.level * modifiers[this.type].speed;
+  this.intelligence = this.level * modifiers[this.type].intelligence;
   this.status = function() {
     if (this.hp > 0) {
       console.log("Status: " + alive);
