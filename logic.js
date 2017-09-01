@@ -97,7 +97,7 @@ function Character(name, type) {
       console.log("Speed: " + this.speed);
     }
   };
-  this.luck = Math.floor((Math.random() * 20) + 1);
+  this.luck = Math.floor((Math.random() * 11) + 10);
   this.intelligence = function() {
     if (this.type === "Warrior") {
       (this.intelligence = (this.level * 60));
