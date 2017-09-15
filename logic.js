@@ -1,6 +1,21 @@
 var inquirer = require("inquirer");
-
+var mysql = require("mysql");
 var classes = require("./classes.js");
+
+var connection = mysql.createConnection({
+  host: "localhost",
+  port: 8889,
+  user: "root",
+  password: "insecure",
+  database: "simpleRPG_DB"
+});
+
+connection.connect(function(err) {
+  if (err) {
+    return console.log(err);
+  }
+  createPlayer();
+});
 
 function Character(name, type) {
   var alive = "Alive";
@@ -173,5 +188,3 @@ function endGame() {
   }
   console.log("Come back again soon!");
 };
-
-createPlayer();
