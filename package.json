@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^3.2.3",
-    "mysql": "^2.14.1"
+    "inquirer": "^3.2.3"
   }
 }
