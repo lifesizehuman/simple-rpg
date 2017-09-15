@@ -6,6 +6,8 @@ function Character(name, type) {
   var alive = "Alive";
   var dead = "Dead";
 
+  var statType = ["Name: ", "Class: ", "Level: ", "HP: ", "Mana: ", "Offense: ", "Defense: ", "Speed: ", "Luck: ", "Intellect: "];
+
   this.name = name;
   this.type = type;
   this.level = 1;
@@ -23,16 +25,13 @@ function Character(name, type) {
       console.log("Status: " + dead);
     }
   };
+
+  var charStats = [this.name, this.type, this.level, this.hp, this.mana, this.offense, this.defense, this.speed, this.luck, this.intelligence];
+
   this.printStats = function() {
-    console.log("Name: " + this.name);
-    console.log("Class: " + this.type);
-    console.log("Health: " + this.hp);
-    console.log("Mana: " + this.mana);
-    console.log("Offense: " + this.offense);
-    console.log("Defense: " + this.defense);
-    console.log("Speed: " + this.speed);
-    console.log("Luck: " + this.luck);
-    console.log("Intellect: " + this.intelligence);
+    for (var i = 0; i < charStats.length; i++) {
+      console.log(statType[i] + charStats[i]);
+    }
     this.status();
     console.log("---------------------");
   };
